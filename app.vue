@@ -9,7 +9,7 @@ useHead({
 })
 
 const value = ref<number>(0)
-const count = ref<number>(0)
+const count = ref<number>(5)
 const preciseMode = ref<boolean>(true)
 
 onMounted(() => {
@@ -30,7 +30,6 @@ onMounted(() => {
   }
 
   animateValue(value, 87, 1200)
-  animateValue(count, 10, 1200)
 })
 </script>
 
@@ -38,7 +37,7 @@ onMounted(() => {
   <div class="fixed w-screen h-screen flex justify-center items-center poppins-regular">
     <div class="lg:w-96 w-8/12 flex flex-col items-center gap-16">
       <StarGroup class="h-5" :count :value />
-      <URange v-model="value" color="gray" size="xs" :step="preciseMode ? undefined : (100 / (count * 2))" :min="0" :max="100" />
+      <URange v-model="value" color="gray" size="xs" :step="preciseMode ? undefined : (100 / (count * 2.01))" :min="0" :max="100" />
       <div class="w-full flex justify-between items-center">
         <UButton
           color="gray"
