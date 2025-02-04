@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { UCheckbox } from '#components'
 import NumberFlow from '@number-flow/vue'
 
 useHead({
