@@ -9,7 +9,7 @@ function toggleColorMode() {
 <template>
   <UButton
     :icon="`heroicons:${isDark ? 'sun' : 'moon'}`"
-    color="white"
+    color="gray"
     variant="ghost"
     size="lg"
     @click="toggleColorMode"

@@ -8,29 +8,54 @@ useHead({
   ],
 })
 
-const value = ref<number>(47)
-const count = ref<number>(5)
+const value = ref<number>(0)
+const count = ref<number>(0)
 const preciseMode = ref<boolean>(true)
+
+onMounted(() => {
+  const animateValue = (refValue: any, targetValue: number, duration: number) => {
+    const startTime = performance.now()
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      refValue.value = Math.floor(progress * targetValue)
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
+    }
+
+    requestAnimationFrame(animate)
+  }
+
+  animateValue(value, 87, 1200)
+  animateValue(count, 10, 1200)
+})
 </script>
 
 <template>
   <div class="fixed w-screen h-screen flex justify-center items-center poppins-regular">
     <div class="lg:w-96 w-8/12 flex flex-col items-center gap-16">
-      <StarGroup class="" :count :value />
-      <URange v-model="value" size="xs" :step="preciseMode ? undefined : (100 / (count * 2))" :min="0" :max="100" />
+      <StarGroup class="h-5" :count :value />
+      <URange v-model="value" color="gray" size="xs" :step="preciseMode ? undefined : (100 / (count * 2))" :min="0" :max="100" />
       <div class="w-full flex justify-between items-center">
         <UButton
+          color="gray"
           size="xs"
           variant="solid"
-          icon="heroicons:minus" @click="() => {
+          icon="heroicons:minus"
+          @click="() => {
             if (count !== 1)
               count--
           }"
         />
         <NumberFlow class="font-bold flex items-center" :value="count" />
         <UButton
+          color="gray"
           size="xs"
-          icon="heroicons:plus" @click="() => {
+          icon="heroicons:plus"
+          @click="() => {
             if (count !== 15)
               count++
           }"
@@ -41,6 +66,7 @@ const preciseMode = ref<boolean>(true)
         <StarGroup class="scale-[1.2]" :count="1" :value="50" />
         <UToggle
           v-model="preciseMode"
+          color="gray"
           size="sm"
           @click="() => {
             preciseMode = !preciseMode
@@ -49,14 +75,14 @@ const preciseMode = ref<boolean>(true)
               value = Math.round(value)
           }"
         />
-        <StarGroup class="scale-[1.2]" :count="1" :value="80" />
+        <StarGroup class="scale-[1.2]" :count="1" :value="65" />
       </div>
     </div>
 
     <div class="absolute top-0 right-0 m-2 flex items-center gap-2">
       <a target="_blank" href="https://github.com/atlasyigitaydin/stars">
         <UButton
-          color="white"
+          color="gray"
           size="lg" variant="link" icon="mdi:github"
         />
       </a>
