@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { UCheckbox } from '#components'
 import NumberFlow from '@number-flow/vue'
 
 useHead({
@@ -10,13 +11,15 @@ useHead({
 
 const value = ref<number>(84)
 const count = ref<number>(5)
+const preciseMode = ref<boolean>(true)
 </script>
 
 <template>
   <div class="fixed w-screen h-screen flex justify-center items-center poppins-regular">
     <div class="lg:w-96 w-8/12 flex flex-col items-center gap-16">
       <StarGroup :count :value />
-      <URange v-model="value" color="gray" :min="0" :max="100" />
+      <UDivider />
+      <URange v-model="value" :step="preciseMode ? undefined : (100 / (count * 2))" color="gray" :min="0" :max="100" />
       <div class="w-full flex justify-between items-center">
         <UButton
           color="gray"
@@ -34,6 +37,20 @@ const count = ref<number>(5)
               count++
           }"
         />
+      </div>
+
+      <div class="flex items-center justify-center gap-2 w-full">
+        <StarGroup :count="1" :value="50" />
+        <UToggle
+          v-model="preciseMode"
+          color="gray" @click="() => {
+            preciseMode = !preciseMode
+
+            if (!preciseMode)
+              value = Math.round(value)
+          }"
+        />
+        <StarGroup :count="1" :value="80" />
       </div>
     </div>
 
