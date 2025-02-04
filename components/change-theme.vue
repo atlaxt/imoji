@@ -7,12 +7,11 @@ function toggleColorMode() {
 </script>
 
 <template>
-  <div>
-    <UButton
-      :icon="`heroicons:${isDark ? 'sun' : 'moon'}`"
-      color="white"
-      variant="ghost"
-      @click="toggleColorMode"
-    />
-  </div>
+  <UButton
+    :icon="`heroicons:${isDark ? 'sun' : 'moon'}`"
+    color="white"
+    variant="ghost"
+    size="lg"
+    @click="toggleColorMode"
+  />
 </template>

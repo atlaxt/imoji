@@ -8,7 +8,7 @@ useHead({
   ],
 })
 
-const value = ref<number>(84)
+const value = ref<number>(47)
 const count = ref<number>(5)
 const preciseMode = ref<boolean>(true)
 </script>
@@ -16,44 +16,52 @@ const preciseMode = ref<boolean>(true)
 <template>
   <div class="fixed w-screen h-screen flex justify-center items-center poppins-regular">
     <div class="lg:w-96 w-8/12 flex flex-col items-center gap-16">
-      <StarGroup :count :value />
-      <UDivider />
-      <URange v-model="value" :step="preciseMode ? undefined : (100 / (count * 2))" color="gray" :min="0" :max="100" />
+      <StarGroup class="" :count :value />
+      <URange v-model="value" size="xs" :step="preciseMode ? undefined : (100 / (count * 2))" :min="0" :max="100" />
       <div class="w-full flex justify-between items-center">
         <UButton
-          color="gray"
+          size="xs"
           variant="solid"
           icon="heroicons:minus" @click="() => {
             if (count !== 1)
               count--
           }"
         />
-        <NumberFlow class="" :value="count" />
+        <NumberFlow class="font-bold flex items-center" :value="count" />
         <UButton
-          color="gray"
+          size="xs"
           icon="heroicons:plus" @click="() => {
-            if (count !== 20)
+            if (count !== 15)
               count++
           }"
         />
       </div>
 
       <div class="flex items-center justify-center gap-2 w-full">
-        <StarGroup :count="1" :value="50" />
+        <StarGroup class="scale-[1.2]" :count="1" :value="50" />
         <UToggle
           v-model="preciseMode"
-          color="gray" @click="() => {
+          size="sm"
+          @click="() => {
             preciseMode = !preciseMode
 
             if (!preciseMode)
               value = Math.round(value)
           }"
         />
-        <StarGroup :count="1" :value="80" />
+        <StarGroup class="scale-[1.2]" :count="1" :value="80" />
       </div>
     </div>
 
-    <ChangeTheme color="gray" class="fixed top-0 right-0 m-2" />
+    <div class="absolute top-0 right-0 m-2 flex items-center gap-2">
+      <a target="_blank" href="https://github.com/atlasyigitaydin/stars">
+        <UButton
+          color="white"
+          size="lg" variant="link" icon="mdi:github"
+        />
+      </a>
+      <ChangeTheme class="" />
+    </div>
   </div>
 </template>
 
