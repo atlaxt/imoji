@@ -1,5 +1,6 @@
-<p align="center">
-  <a href="https://stars.atlasyigitaydin.com" target="_blank">
-    <img src="https://img.shields.io/badge/Visit-Stars%20Platform-blue?style=for-the-badge&logo=github" alt="Visit Stars Platform">
+<p align="center" style="position: relative; display: inline-block;">
+   <a href="https://stars.atlasyigitaydin.com" target="_blank" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; font-size: 16px; border-radius: 5px;">
+    ⭐ Visit Stars Platform ⭐
   </a>
+  <img src="https://github.com/user-attachments/assets/1c7e2e2e-a6b6-4084-9c63-03e0850d66e5" alt="README Banner">
 </p>
