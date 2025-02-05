@@ -1,1 +1,5 @@
-![image](https://github.com/user-attachments/assets/1c7e2e2e-a6b6-4084-9c63-03e0850d66e5)
+<p align="center">
+  <a href="https://stars.atlasyigitaydin.com" target="_blank">
+    <img src="https://img.shields.io/badge/Visit-Stars%20Platform-blue?style=for-the-badge&logo=github" alt="Visit Stars Platform">
+  </a>
+</p>
