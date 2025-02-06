@@ -78,15 +78,14 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="absolute top-0 right-0 m-2 flex items-center gap-2">
-      <a target="_blank" href="https://github.com/atlasyigitaydin/stars">
-        <UButton
-          color="gray"
-          size="lg" variant="link" icon="mdi:github"
-        />
-      </a>
-      <ChangeTheme class="" />
-    </div>
+    <a class="fixed bottom-0" target="_blank" href="https://github.com/atlasyigitaydin/stars">
+      <UButton
+        label="atlasyigitaydin"
+        color="gray"
+        size="sm" variant="link" icon="mdi:github"
+      />
+    </a>
+    <ChangeTheme class="fixed right-0 top-0 m-2" />
   </div>
 </template>
 
