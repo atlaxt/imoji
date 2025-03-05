@@ -2,7 +2,8 @@
 import NumberFlow from '@number-flow/vue'
 
 useHead({
-  title: 'Stars',
+  title: 'Rating Stars',
+  description: 'Create a fast and interactive star rating system with Vue.js and Nuxt. Perfect for improving UX and engaging users effectively.',
   link: [
     { rel: 'icon', href: '/favicon.ico' },
   ],
