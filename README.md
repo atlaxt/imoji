@@ -3,7 +3,7 @@
 A simple star rating system! Users can rate from 1 to 5 stars. Developed with Vue.js and Nuxt.js.
 
 ## 🌍 Live Demo
-[stars.atlasyigitaydin.com](https://stars.atlasyigitaydin.com/)
+[rating.com](https://rating.atlasyigitaydin.com)
 
 ## 🚀 Features
 - ⭐ Star-based rating
