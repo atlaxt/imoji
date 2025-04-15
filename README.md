@@ -1,28 +1,75 @@
-# ⭐ Stars - Rating System
+# Nuxt Minimal Starter
 
-A simple star rating system! Users can rate from 1 to 5 stars. Developed with Vue.js and Nuxt.js.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## 🌍 Live Demo
-[rating.com](https://rating.atlasyigitaydin.com)
+## Setup
 
-## 🚀 Features
-- ⭐ Star-based rating
-- 🔥 Built with Vue.js & Nuxt.js
-- 📊 Real-time score updates
-- 📱 Mobile-friendly
+Make sure to install dependencies:
 
-## 📦 Installation
+```bash
+# npm
+npm install
 
-Clone the project and start:
-```sh
- git clone https://github.com/atlasyigitaydin/stars.git
- cd stars
- npm install
- npm run dev
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-## ⚙️ Build & Deployment
-```sh
-npm run build
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
 npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
