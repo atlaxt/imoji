@@ -1,15 +1,33 @@
 <script setup lang="ts">
-import { useDebounceFn } from '@vueuse/core'
-
 const emojiStore = useEmojiStore()
 
-const handleSearch = useDebounceFn(async (value: string) => {
-  if (value.length > 0)
+const search = ref<string>('')
+
+async function handleSearch() {
+  if (search.value.length > 0)
     emojiStore.selectedGroup = ''
 
-  emojiStore.search = value
+  emojiStore.search = search.value
   await emojiStore.fetchEmojis()
-}, 1000)
+}
+defineShortcuts({
+  enter: {
+    handler: async () => await handleSearch(),
+    usingInput: true,
+  },
+})
+function focusInput() {
+  const _input = document.querySelector('input[name="_search"]') as HTMLInputElement
+  _input.focus()
+  _input.select()
+}
+
+defineShortcuts({
+  ctrl_f: {
+    handler: () => focusInput(),
+    usingInput: true,
+  },
+})
 
 const skinTones = [
   { key: '', color: '#ffc337' },
@@ -22,6 +40,7 @@ const skinTones = [
 
 async function setSkinTone(tone: '' | 'light' | 'medium-light' | 'medium' | 'medium-dark' | 'dark') {
   emojiStore.selectedSkinColor = tone
+  localStorage.setItem('selected-skin', tone)
   await emojiStore.fetchEmojis()
 }
 
@@ -47,18 +66,61 @@ async function setGroup(group: '' | 'Smileys & Emotion' | 'People & Body' | 'Ani
   }
   await emojiStore.fetchEmojis()
 }
+
+onMounted(() => {
+  emojiStore.setSkinColorFromStorage()
+})
 </script>
 
 <template>
   <div class="w-full h-full flex flex-col gap-3 justify-end transition-transform duration-300 px-2">
-    <div class="flex flex-row gap-4 lg:justify-between justify-center items-center w-full">
-      <UInput
-        icon="i-lucide-search"
-        size="md"
-        placeholder="Search..."
-        class="lg:w-48 w-full"
-        @update:model-value="handleSearch"
-      />
+    <div class="flex lg:flex-row flex-col gap-4 lg:justify-between justify-center items-center w-full">
+      <UButtonGroup>
+        <UInput
+          v-model="search"
+          icon="i-lucide-search"
+          size="md"
+          name="_search"
+          placeholder="Search..."
+          class="lg:w-64 w-full"
+        >
+          <template #trailing>
+            <UKbd v-if="!(search.length > 0)">
+              {{ "CTRL + F" }}
+            </UKbd>
+            <UButton
+              v-else
+              color="error"
+              variant="link"
+              icon="i-lucide-circle-x"
+              aria-label="Clear input"
+              @click="async () => {
+                search = ''
+                emojiStore.search = ''
+                await emojiStore.fetchEmojis()
+              }"
+            />
+          </template>
+        </UInput>
+        <UTooltip
+          :content="{
+            align: 'center',
+            side: 'top',
+            sideOffset: 8,
+          }"
+        >
+          <template #content>
+            <UKbd> <UIcon name="lucide:corner-down-left" /> </UKbd>
+          </template>
+          <UButton
+            color="neutral"
+            :icon="`${!emojiStore.isLoading ? 'i-lucide-search' : 'i-lucide-loader'}`"
+            @click="async () => {
+              await handleSearch()
+            }"
+          />
+        </UTooltip>
+      </UButtonGroup>
       <div class="flex flex-row items-center gap-2">
         <button
           v-for="tone in skinTones"
@@ -76,8 +138,7 @@ async function setGroup(group: '' | 'Smileys & Emotion' | 'People & Body' | 'Ani
         </button>
       </div>
     </div>
-
-    <div class="w-full h-full flex lg:gap-4 gap-2 flex-wrap items-center">
+    <div class="w-full h-full flex lg:gap-4 gap-x-2 gap-y-1 flex-wrap items-center">
       <div
         v-for="group in groups"
         :key="group.key"

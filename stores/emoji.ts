@@ -46,8 +46,6 @@ export const useEmojiStore = defineStore('emoji', {
 
   actions: {
     async fetchEmojis() {
-      if (this.emojis.length)
-        return
       this.isLoading = true
       try {
         const res = await fetch('/emojis.json')
@@ -80,6 +78,13 @@ export const useEmojiStore = defineStore('emoji', {
         list = list.slice(0, 20)
       localStorage.setItem(key, JSON.stringify(list))
       this.fetchLastEmojis()
+    },
+
+    setSkinColorFromStorage() {
+      const tone = localStorage.getItem('selected-skin')
+      if (tone) {
+        this.selectedSkinColor = tone as typeof this.selectedSkinColor
+      }
     },
 
   },

@@ -16,8 +16,8 @@ function toggleDark() {
   >
     <div class="flex justify-between w-full items-center px-2">
       <div class="flex flex-row items-center  gap-1.5">
-        <img src="../../assets/emojix.png" class="lg:h-8 h-6">
-        <p class="lg:text-3xl text-xl font-extrabold tracking-tighter bg-gradient-to-r from-yellow-400 to-pink-500 text-transparent bg-clip-text">
+        <img src="../../assets/emojix.png" class="lg:h-6 h-4">
+        <p class="lg:text-2xl text-lg font-extrabold tracking-tighter bg-gradient-to-r from-yellow-400 to-pink-500 text-transparent bg-clip-text">
           emojix
         </p>
       </div>

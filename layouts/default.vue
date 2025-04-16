@@ -24,7 +24,7 @@ onUnmounted(() => {
   >
     <div class="relative flex flex-col z-10 lg:w-4xl w-full h-full">
       <AppHeader />
-      <div class="h-2/6 lg:mb-4 mb-2">
+      <div class="lg:h-2/6 lg:mb-4 mb-2">
         <Welcome />
       </div>
       <div
