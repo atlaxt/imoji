@@ -74,7 +74,7 @@ onMounted(() => {
 
 <template>
   <div class="w-full h-full flex flex-col gap-3 justify-end transition-transform duration-300 px-2">
-    <div class="flex lg:flex-row flex-col gap-4 lg:justify-between justify-center items-end w-full">
+    <div class="flex lg:flex-row flex-col-reverse gap-4 lg:justify-between justify-center items-end w-full">
       <UButtonGroup
         class="lg:w-64 w-full"
         :class="{
