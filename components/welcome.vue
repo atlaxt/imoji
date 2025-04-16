@@ -148,7 +148,7 @@ onMounted(() => {
         </button>
       </div>
     </div>
-    <div class="w-full h-full flex lg:gap-4 gap-x-2 gap-y-1 flex-row items-center overflow-x-auto lg:py-0 lg:px-0 lg:pb-0 py-1 px-2 pb-2">
+    <div class="w-full h-full flex lg:gap-4 gap-x-2 gap-y-1 flex-row items-center overflow-x-auto lg:py-0 lg:px-2 lg:pb-0 py-1 px-2 pb-2">
       <div
         v-for="group in groups"
         :key="group.key"
