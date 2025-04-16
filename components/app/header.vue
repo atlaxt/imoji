@@ -16,8 +16,8 @@ function toggleDark() {
   >
     <div class="flex justify-between w-full items-center px-2">
       <div class="flex flex-row items-center  gap-1.5">
-        <img src="../../assets/emojix.png" class="lg:h-6 h-4">
-        <p class="lg:text-2xl text-lg tracking-tighter bg-gradient-to-r from-yellow-400/90 to-pink-500/90 text-transparent bg-clip-text">
+        <img src="../../assets/emojix.png" class="lg:h-6 h-4 animate-slow-spin">
+        <p class="select-none lg:text-2xl text-lg tracking-tighter bg-gradient-to-r from-yellow-400/90 to-pink-500/90 text-transparent bg-clip-text">
           emojix
         </p>
       </div>
@@ -40,3 +40,16 @@ function toggleDark() {
     </div>
   </header>
 </template>
+
+<style>
+@layer utilities {
+  @keyframes slow-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .animate-slow-spin {
+    animation: slow-spin 8s linear infinite;
+  }
+}
+</style>
