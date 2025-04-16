@@ -19,7 +19,7 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="flex flex-col fixed left-0 top-0 w-screen h-screen items-center
+    class="flex flex-col fixed left-0 pb-2 top-0 w-screen h-screen items-center
   "
   >
     <div class="relative flex flex-col z-10 lg:w-4xl w-full h-full">

@@ -74,8 +74,9 @@ onMounted(() => {
 
 <template>
   <div class="w-full h-full flex flex-col gap-3 justify-end transition-transform duration-300 px-2">
-    <div class="flex lg:flex-row flex-col gap-4 lg:justify-between justify-center items-center w-full">
+    <div class="flex lg:flex-row flex-col gap-4 lg:justify-between justify-center items-end w-full">
       <UButtonGroup
+        class="lg:w-64 w-full"
         :class="{
           'opacity-50': emojiStore.isLoading,
           'select-none': !emojiStore.isLoading,
@@ -87,7 +88,7 @@ onMounted(() => {
           size="md"
           name="_search"
           placeholder="Search..."
-          class="lg:w-64 w-full"
+          class="w-full"
         >
           <template #trailing>
             <UKbd v-if="!(search.length > 0)">
@@ -147,7 +148,7 @@ onMounted(() => {
         </button>
       </div>
     </div>
-    <div class="w-full h-full flex lg:gap-4 gap-x-2 gap-y-1 flex-wrap items-center">
+    <div class="w-full h-full flex lg:gap-4 gap-x-2 gap-y-1 flex-row items-center overflow-x-auto lg:py-0 lg:px-0 lg:pb-0 py-1 px-2 pb-2">
       <div
         v-for="group in groups"
         :key="group.key"
