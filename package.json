@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "emojix": "git add -A . && git commit -m 'deploy' && git push -u origin master && pnpm generate && firebase deploy"
   },
   "dependencies": {
     "@nuxt/fonts": "0.11.1",

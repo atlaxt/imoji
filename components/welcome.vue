@@ -75,7 +75,12 @@ onMounted(() => {
 <template>
   <div class="w-full h-full flex flex-col gap-3 justify-end transition-transform duration-300 px-2">
     <div class="flex lg:flex-row flex-col gap-4 lg:justify-between justify-center items-center w-full">
-      <UButtonGroup>
+      <UButtonGroup
+        :class="{
+          'opacity-50': emojiStore.isLoading,
+          'select-none': !emojiStore.isLoading,
+        }"
+      >
         <UInput
           v-model="search"
           icon="i-lucide-search"
@@ -126,6 +131,10 @@ onMounted(() => {
           v-for="tone in skinTones"
           :key="tone.key"
           class="relative w-6 h-6 rounded-full border border-zinc-300 hover:scale-105 transition"
+          :class="{
+            'opacity-50': emojiStore.isLoading,
+            'select-none': !emojiStore.isLoading,
+          }"
           :style="{ backgroundColor: tone.color, boxShadow: emojiStore.selectedSkinColor === tone.key ? '0 0 0 2px rgba(0,0,0,0.3)' : '' }"
           @click="setSkinTone((tone.key as '' | 'light' | 'medium-light' | 'medium' | 'medium-dark' | 'dark'))"
         >
