@@ -6,7 +6,7 @@ export const useEmojiStore = defineStore('emoji', {
     lastEmojis: [] as Emoji[],
     isLoading: true,
     search: '',
-    selectedGroup: 'Smileys & Emotion' as '' | 'Smileys & Emotion' | 'People & Body' | 'Animals & Nature' | 'Food & Drink' | 'Travel & Places' | 'Activities' | 'Objects' | 'Symbols' | 'Flags',
+    selectedGroup: 'Smileys & Emotion' as | '' | 'Smileys & Emotion' | 'People & Body' | 'Animals & Nature' | 'Food & Drink' | 'Travel & Places' | 'Activities' | 'Objects' | 'Symbols' | 'Flags',
     selectedSkinColor: '' as '' | 'light' | 'medium-light' | 'medium' | 'medium-dark' | 'dark',
   }),
 

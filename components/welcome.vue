@@ -4,6 +4,9 @@ import { useDebounceFn } from '@vueuse/core'
 const emojiStore = useEmojiStore()
 
 const handleSearch = useDebounceFn(async (value: string) => {
+  if (value.length > 0)
+    emojiStore.selectedGroup = ''
+
   emojiStore.search = value
   await emojiStore.fetchEmojis()
 }, 1000)
@@ -34,8 +37,14 @@ const groups = [
   { key: 'Flags', icon: 'tabler:flag-filled' },
 ]
 
-async function setGroup(tone: '' | 'Smileys & Emotion' | 'People & Body' | 'Animals & Nature' | 'Food & Drink' | 'Travel & Places' | 'Activities' | 'Objects' | 'Symbols' | 'Flags') {
-  emojiStore.selectedGroup = tone
+async function setGroup(group: '' | 'Smileys & Emotion' | 'People & Body' | 'Animals & Nature' | 'Food & Drink' | 'Travel & Places' | 'Activities' | 'Objects' | 'Symbols' | 'Flags') {
+  if (emojiStore.selectedGroup === group) {
+    emojiStore.selectedGroup = ''
+    emojiStore.search = ''
+  }
+  else {
+    emojiStore.selectedGroup = group
+  }
   await emojiStore.fetchEmojis()
 }
 </script>
