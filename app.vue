@@ -34,6 +34,6 @@ useHead({
 
 <style>
 div {
-  font-family: 'Lexend', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 </style>

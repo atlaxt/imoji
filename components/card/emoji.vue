@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Emoji } from '~/types'
+import Emojix from '../../assets/emojix.png'
 
 const props = defineProps<{
   emoji: Emoji
@@ -12,7 +13,10 @@ function showToast(emoji: Emoji) {
   toast.add({
     title: 'Copied to Clipboard',
     description: `${emoji.emoji} has been successfully copied.`,
-    icon: 'noto-v1:cat-with-wry-smile',
+    avatar: {
+      src: Emojix,
+      alt: 'emojix',
+    },
     class: 'text-4xl',
   })
 }
