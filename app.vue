@@ -28,7 +28,7 @@ useHead({
     { name: 'twitter:creator', content: '@yourhandle' },
   ],
   link: [
-    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+    { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
     { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
     { rel: 'canonical', href: 'https://imoji.co' },
   ],
