@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Emoji } from '~/types'
-import Emojix from '../../assets/emojix.png'
+import Imoji from '../../assets/imoji.png'
 
 const props = defineProps<{
   emoji: Emoji
@@ -14,8 +14,8 @@ function showToast(emoji: Emoji) {
     title: 'Copied to Clipboard',
     description: `${emoji.emoji} has been successfully copied.`,
     avatar: {
-      src: Emojix,
-      alt: 'emojix',
+      src: Imoji,
+      alt: 'imoji',
     },
     class: 'text-4xl',
   })
@@ -34,8 +34,16 @@ function copyToClipboard() {
       align: 'center',
       side: 'top',
       sideOffset: 8,
-    }" :delay-duration="400" text="copy to clipboard"
+    }" :delay-duration="400"
   >
+    <template #content>
+      <div class="flex flex-row gap-2 items-center px-1">
+        <UIcon name="hugeicons:mouse-left-click-06" class="text-xl" />
+        <p class="font-semibold">
+          {{ "Copy to Clipboard" }}
+        </p>
+      </div>
+    </template>
     <div
       class="cursor-pointer w-12 h-12 overflow-hidden flex items-center justify-center"
       :class="{

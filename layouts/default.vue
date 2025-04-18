@@ -34,7 +34,7 @@ onUnmounted(() => {
         <Welcome />
       </div>
       <div
-        class="bg-primary-50 dark:bg-primary-950 rounded-t-lg lg:mx-0 flex flex-col py-1
+        class="bg-primary-50 dark:bg-primary-950 rounded-t-lg lg:mx-0 flex flex-col
         w-full h-full
         overflow-y-auto
        [&::-webkit-scrollbar]:w-1

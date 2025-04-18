@@ -1,6 +1,6 @@
-# 🧿 Emojix
+# 🧿 imoji
 
-**Emojix** is a modern and minimal emoji explorer built with Vue and Tailwind CSS.
+**imoji** is a modern and minimal emoji explorer built with Vue and Tailwind CSS.
 You can search, filter by skin tone or category, and copy emojis with a single click.
 
 ## ✨ Features
