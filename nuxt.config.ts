@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   gtag: {
     id: 'G-4R3XKFL775',
   },
-  googleAdsense: {
-    id: 'ca-pub-1948589981733097',
-  },
+  // googleAdsense: {
+  //   id: 'ca-pub-',
+  // },
 })
