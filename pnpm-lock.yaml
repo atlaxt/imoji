@@ -17,9 +17,6 @@ importers:
       '@nuxt/ui':
         specifier: ^3.0.2
         version: 3.0.2(@babel/parser@7.27.0)(db0@0.3.1)(embla-carousel@8.6.0)(ioredis@5.6.1)(magicast@0.3.5)(typescript@5.8.3)(vite@6.2.6(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(yaml@2.7.1))
-      '@nuxtjs/google-adsense':
-        specifier: ^3.0.0
-        version: 3.0.0(magicast@0.3.5)(vue@3.5.13(typescript@5.8.3))
       '@pinia/nuxt':
         specifier: ^0.11.0
         version: 0.11.0(magicast@0.3.5)(pinia@3.0.2(typescript@5.8.3)(vue@3.5.13(typescript@5.8.3)))
@@ -677,9 +674,6 @@ packages:
 
   '@nuxtjs/color-mode@3.5.2':
     resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
-
-  '@nuxtjs/google-adsense@3.0.0':
-    resolution: {integrity: sha512-fR1rbj6mnfBCWMkVSocPUYX11rGzTwSs1v2sajG6wtXGjXLGRjJSFKSynYHdwO3V4o4xRvtve0W/Db96eiTKmA==}
 
   '@oxc-parser/binding-darwin-arm64@0.56.5':
     resolution: {integrity: sha512-rj4WZqQVJQgLnGnDu2ciIOC5SqcBPc4x11RN0NwuedSGzny5mtBdNVLwt0+8iB15lIjrOKg5pjYJ8GQVPca5HA==}
@@ -5488,16 +5482,6 @@ snapshots:
       semver: 7.7.1
     transitivePeerDependencies:
       - magicast
-
-  '@nuxtjs/google-adsense@3.0.0(magicast@0.3.5)(vue@3.5.13(typescript@5.8.3))':
-    dependencies:
-      '@nuxt/kit': 3.16.2(magicast@0.3.5)
-      '@vueuse/core': 10.11.1(vue@3.5.13(typescript@5.8.3))
-      defu: 6.1.4
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - magicast
-      - vue
 
   '@oxc-parser/binding-darwin-arm64@0.56.5':
     optional: true

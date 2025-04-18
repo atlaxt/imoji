@@ -32,6 +32,14 @@ useHead({
     { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
     { rel: 'canonical', href: 'https://imoji.co' },
   ],
+
+  script: [
+    {
+      async: true,
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1948589981733097',
+      crossorigin: 'anonymous',
+    },
+  ],
 })
 </script>
 
