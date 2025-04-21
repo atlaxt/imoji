@@ -25,7 +25,7 @@ useHead({
     { name: 'twitter:title', content: 'imoji – Copy & Explore Emojis' },
     { name: 'twitter:description', content: 'Fast emoji explorer with copy feature and tone filters.' },
     { name: 'twitter:image', content: 'https://imoji.co/og.jpg' },
-    { name: 'twitter:creator', content: '@yourhandle' },
+    { name: 'twitter:creator', content: '@atlaxtt' },
   ],
   link: [
     { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
