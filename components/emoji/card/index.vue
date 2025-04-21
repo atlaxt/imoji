@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Emoji } from '~/types'
-import Imoji from '../../assets/imoji.png'
+import Imoji from '../../../assets/imoji.png'
 
 const props = defineProps<{
   emoji: Emoji

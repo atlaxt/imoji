@@ -1,4 +1,4 @@
-import type { Emoji } from '~/types'
+import type { Emoji, Group, GroupKey, SkinTone, SkinToneKey } from '~/types'
 
 export const useEmojiStore = defineStore('emoji', {
   state: () => ({
@@ -6,15 +6,34 @@ export const useEmojiStore = defineStore('emoji', {
     lastEmojis: [] as Emoji[],
     isLoading: true,
     search: '',
-    selectedGroup: 'Smileys & Emotion' as | '' | 'Smileys & Emotion' | 'People & Body' | 'Animals & Nature' | 'Food & Drink' | 'Travel & Places' | 'Activities' | 'Objects' | 'Symbols' | 'Flags',
-    selectedSkinColor: '' as '' | 'light' | 'medium-light' | 'medium' | 'medium-dark' | 'dark',
+    selectedGroupKey: 'Smileys & Emotion' as GroupKey,
+    groupOptions: [
+      { key: 'Smileys & Emotion', icon: 'fa-solid:smile' },
+      { key: 'People & Body', icon: 'fa6-solid:people-pulling' },
+      { key: 'Animals & Nature', icon: 'fluent:animal-dog-16-filled' },
+      { key: 'Food & Drink', icon: 'mdi:food' },
+      { key: 'Travel & Places', icon: 'material-symbols:travel' },
+      { key: 'Activities', icon: 'bxs:map' },
+      { key: 'Objects', icon: 'ic:baseline-emoji-objects' },
+      { key: 'Symbols', icon: 'fluent:symbols-16-filled' },
+      { key: 'Flags', icon: 'tabler:flag-filled' },
+    ] as Group[],
+    selectedSkinColor: '' as SkinToneKey,
+    skinToneOptions: [
+      { key: '', color: '#ffc337' },
+      { key: 'light', color: '#FDD7C4' },
+      { key: 'medium-light', color: '#ECBFAC' },
+      { key: 'medium', color: '#C48D7D' },
+      { key: 'medium-dark', color: '#946662' },
+      { key: 'dark', color: '#563739' },
+    ] as SkinTone[],
   }),
 
   getters: {
     filteredEmojis(state): Emoji[] {
       const filtered = state.emojis.filter((e) => {
         const matchesSearch = e.name.toLowerCase().includes(state.search.toLowerCase())
-        const matchesGroup = !state.selectedGroup || e.group === state.selectedGroup
+        const matchesGroup = !state.selectedGroupKey || e.group === state.selectedGroupKey
         return matchesSearch && matchesGroup
       })
 

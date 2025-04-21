@@ -31,7 +31,7 @@ onUnmounted(() => {
     <div class="relative flex flex-col z-10 lg:w-5xl w-full h-full">
       <AppHeader />
       <div class="lg:h-2/6 lg:mb-4 mb-2">
-        <Welcome />
+        <slot name="filters" />
       </div>
       <div
         class="bg-primary-50 dark:bg-primary-950 rounded-t-lg lg:mx-0 flex flex-col
@@ -47,7 +47,7 @@ onUnmounted(() => {
       >
         <slot />
       </div>
-      <LastUsed />
+      <slot name="footer" />
     </div>
   </div>
 </template>

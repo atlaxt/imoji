@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const colorMode = useColorMode()
-const isDark = computed(() => colorMode.value === 'dark')
-function toggleDark() {
-  colorMode.preference = isDark.value ? 'light' : 'dark'
-}
+
 </script>
 
 <template>
@@ -35,19 +31,14 @@ function toggleDark() {
           <span class="text-xl">☕</span>
           Buy me a coffee
         </a>
-        <a href="https://github.com/atlaxt/imoji" target="_blank">
+        <!-- <a href="https://github.com/atlaxt/imoji" target="_blank">
           <UButton
             icon="mdi:github"
             class="text-2xl"
             variant="link"
           />
-        </a>
-        <UButton
-          :icon="`lucide:${isDark ? 'moon' : 'sun'}`"
-          class="text-2xl"
-          variant="link"
-          @click="toggleDark"
-        />
+        </a> -->
+        <ToggleTheme />
       </div>
     </div>
   </header>

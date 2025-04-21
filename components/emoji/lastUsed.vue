@@ -11,7 +11,7 @@ onMounted(() => {
       Last Used Emojis
     </p>
     <div class="flex flex-row items-center overflow-hidden gap-2">
-      <CardEmoji
+      <EmojiCard
         v-for="emoji in emojiStore.lastEmojis"
         :key="emoji.emoji"
         :emoji
