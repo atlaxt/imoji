@@ -8,7 +8,6 @@ onMounted(() => {
 <template>
   <UPopover
     v-if="mounted"
-    mode="hover"
     :content="{ side: 'left', align: 'start' }"
   >
     <UButton
@@ -18,19 +17,32 @@ onMounted(() => {
     />
 
     <template #content>
-      <div class="h-64 w-48 p-2 flex flex-col text-sm gap-2 text-zinc-600 dark:text-zinc-300">
-        <div class="w-full flex items-end gap-2 justify-start">
-          <UIcon class="text-2xl" name="hugeicons:mouse-left-click-06" />
-          <label> {{ "Right click to copy" }} </label>
+      <div class="w-56 p-3 flex flex-col text-sm gap-3 text-zinc-600 dark:text-zinc-300">
+        <div class="flex items-center gap-1 font-semibold text-zinc-700 dark:text-zinc-200">
+          Help
         </div>
-        <USeparator />
-        <div class="w-full h-full">
-          placeholder
+
+        <div class="flex items-center gap-2 text-xs">
+          <UIcon name="hugeicons:mouse-left-click-06" class="text-lg" />
+          <span>Click emoji to copy</span>
         </div>
+
         <USeparator />
-        <p class="text-xs text-zinc-500">
-          Published under <a href="https://opensource.org/licenses/MIT" target="_blank" class="underline">MIT License</a>
-        </p>
+
+        <NuxtLink class="ml-0 hover:ml-2 duration-300" :to="{ name: 'about' }">
+          About
+        </NuxtLink>
+
+        <USeparator />
+
+        <div class="mt-auto text-xs text-zinc-400 flex flex-col gap-1">
+          <p>
+            MIT Licensed •
+            <a href="https://github.com/atlaxt/imoji" target="_blank" class="underline hover:text-blue-500 transition">
+              GitHub ↗
+            </a>
+          </p>
+        </div>
       </div>
     </template>
   </UPopover>
