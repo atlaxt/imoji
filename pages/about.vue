@@ -7,7 +7,7 @@ definePageMeta({
 
 <template>
   <NuxtLayout>
-    <section class="mx-auto px-4 py-10 text-zinc-800 dark:text-zinc-100 leading-relaxed space-y-6">
+    <section class="mx-auto px-4 overflow-y-auto py-10 text-zinc-800 dark:text-zinc-100 leading-relaxed space-y-6">
       <div class="ml-0 hover:ml-2 duration-300">
         <UButton
           icon="lucide:arrow-left"
