@@ -14,7 +14,7 @@ onMounted(() => {
   <UButton
     v-if="mounted"
     :icon="`lucide:${isDark ? 'moon' : 'sun'}`"
-    class="text-2xl"
+    class="text-xl"
     variant="link"
     @click="toggleDark"
   />

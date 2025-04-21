@@ -30,7 +30,7 @@ onUnmounted(() => {
     </div>
     <div class="relative flex flex-col z-10 lg:w-5xl w-full h-full">
       <AppHeader />
-      <div class="lg:h-2/6 lg:mb-4 mb-2">
+      <div v-if="$slots.filters" class="lg:h-2/6 lg:mb-4 mb-2">
         <slot name="filters" />
       </div>
       <div
