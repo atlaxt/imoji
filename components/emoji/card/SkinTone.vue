@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { SkinTone, SkinToneKey } from '~/types'
+import type { EmojiSkinToneKey, SkinTone } from '~/types'
 
 const props = defineProps<{
   skinTone: SkinTone
 }>()
 const emojiStore = useEmojiStore()
 
-async function setSkinTone(tone: SkinToneKey) {
+async function setSkinTone(tone: EmojiSkinToneKey) {
   emojiStore.selectedSkinColor = tone
   localStorage.setItem('selected-skin', tone)
   await emojiStore.fetchEmojis()
@@ -21,7 +21,7 @@ async function setSkinTone(tone: SkinToneKey) {
       'select-none': !emojiStore.isLoading,
     }"
     :style="{ backgroundColor: props.skinTone.color, boxShadow: emojiStore.selectedSkinColor === props.skinTone.key ? '0 0 0 2px rgba(0,0,0,0.3)' : '' }"
-    @click="setSkinTone(props.skinTone.key as SkinToneKey)"
+    @click="setSkinTone(props.skinTone.key as EmojiSkinToneKey)"
   >
     <span
       v-if="emojiStore.selectedSkinColor === props.skinTone.key"

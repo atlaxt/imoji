@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
-  name: 'home',
+  name: 'emojis',
+  path: '/',
 })
 const emojiStore = useEmojiStore()
 

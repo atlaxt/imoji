@@ -1,22 +1,22 @@
 <script setup lang='ts'>
-import type { EmojiGroupKey } from '~/types'
+import type { EmoticonGroupKey } from '~/types'
 
 const props = defineProps<{
   group: {
-    key: EmojiGroupKey
+    key: EmoticonGroupKey
     icon: string
   }
 }>()
-const emojiStore = useEmojiStore()
+const emoticonStore = useEmoticonStore()
 
-async function setGroup(group: EmojiGroupKey) {
-  if (emojiStore.selectedGroupKey === group) {
+async function setGroup(group: EmoticonGroupKey) {
+  if (emoticonStore.selectedGroupKey === group) {
     return
   }
   else {
-    emojiStore.selectedGroupKey = group
+    emoticonStore.selectedGroupKey = group
   }
-  await emojiStore.fetchEmojis()
+  await emoticonStore.fetchEmoticons()
 }
 </script>
 
@@ -29,18 +29,18 @@ async function setGroup(group: EmojiGroupKey) {
         transition-all duration-200 ease-out
         text-sm lg:h-24 lg:w-32 text-center flex-1"
     :class="{
-      'ring-2 ring-zinc-400 dark:ring-zinc-300': emojiStore.selectedGroupKey === props.group.key,
-      'select-none opacity-50': emojiStore.isLoading,
-      'cursor-pointer': !emojiStore.isLoading,
+      'ring-2 ring-zinc-400 dark:ring-zinc-300': emoticonStore.selectedGroupKey === props.group.key,
+      'select-none opacity-50': emoticonStore.isLoading,
+      'cursor-pointer': !emoticonStore.isLoading,
     }"
-    @click="setGroup(props.group.key as EmojiGroupKey)"
+    @click="setGroup(props.group.key as EmoticonGroupKey)"
   >
     <Icon
       :name="props.group.icon"
       class="text-2xl group-hover:scale-110 transition-transform"
     />
     <p class="text-xs font-medium text-zinc-700 dark:text-zinc-200">
-      {{ props.group.key }}
+      {{ props.group.key.split('/').join(' ') }}
     </p>
   </div>
 </template>
