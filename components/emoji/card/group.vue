@@ -11,8 +11,7 @@ const emojiStore = useEmojiStore()
 
 async function setGroup(group: GroupKey) {
   if (emojiStore.selectedGroupKey === group) {
-    emojiStore.selectedGroupKey = ''
-    emojiStore.search = ''
+    return
   }
   else {
     emojiStore.selectedGroupKey = group

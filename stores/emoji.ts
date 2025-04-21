@@ -68,7 +68,33 @@ export const useEmojiStore = defineStore('emoji', {
       this.isLoading = true
       try {
         const res = await fetch('/emojis.json')
-        this.emojis = await res.json()
+        const all = await res.json()
+
+        const group = this.selectedGroupKey
+        const tone = this.selectedSkinColor
+
+        let filtered = all.filter((e: Emoji) => e.group === group)
+
+        if (!tone) {
+          filtered = filtered.filter((e: Emoji) => !e.name.includes(':'))
+        }
+        else {
+          const withTone: Emoji[] = []
+
+          for (const emoji of filtered) {
+            if (emoji.name.includes(':'))
+              continue
+            const baseName = emoji.name
+            const match = all.find(
+              (e: Emoji) => e.name === `${baseName}: ${tone} skin tone`,
+            )
+            withTone.push(match || emoji)
+          }
+
+          filtered = withTone
+        }
+
+        this.emojis = filtered
       }
       catch (err) {
         console.error('Emoji fetch error:', err)
