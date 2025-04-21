@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/fonts', '@nuxt/icon', '@pinia/nuxt', '@nuxt/ui', 'nuxt-gtag'],
+  modules: ['@nuxt/fonts', '@nuxt/icon', '@pinia/nuxt', '@nuxt/ui', 'nuxt-gtag', '@nuxtjs/sitemap'],
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [
@@ -12,5 +12,9 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-4R3XKFL775',
+  },
+  site: {
+    url: 'https://imoji.co/',
+    name: 'imoji – Copy & Explore Emojis Easily',
   },
 })
