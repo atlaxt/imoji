@@ -14,9 +14,9 @@
       <Logo class="min-w-24" />
 
       <div class="lg:flex hidden items-center w-full">
-        <AppNavigation class="mx-6" />
+        <!-- <AppNavigation class="mx-6" /> -->
 
-        <div class="lg:gap-4 gap-2 flex flex-row items-center">
+        <div class="w-full lg:gap-4 gap-2 flex flex-row justify-end items-center">
           <BuyMeACoffee class="min-w-48" />
           <ToggleTheme />
           <Help />
