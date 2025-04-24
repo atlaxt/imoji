@@ -68,6 +68,9 @@ export const useEmojiStore = defineStore('emoji', () => {
 
   // Actions
   async function fetchEmojis() {
+    if (selectedGroupKey.value === '' && search.value === '')
+      selectedGroupKey.value = 'Smileys & Emotion'
+
     isLoading.value = true
     try {
       const res = await fetch('/emojis.json')
@@ -76,14 +79,12 @@ export const useEmojiStore = defineStore('emoji', () => {
       const group = selectedGroupKey.value
       const tone = selectedSkinColor.value
 
-      let filtered = all.filter((e: Emoji) => e.group === group)
+      let filtered = all
+      if (group)
+        filtered = filtered.filter((e: Emoji) => e.group === group)
 
-      if (!tone) {
-        filtered = filtered.filter((e: Emoji) => !e.name.includes(':'))
-      }
-      else {
+      if (tone) {
         const withTone: Emoji[] = []
-
         for (const emoji of filtered) {
           if (emoji.name.includes(':'))
             continue
@@ -93,7 +94,6 @@ export const useEmojiStore = defineStore('emoji', () => {
           )
           withTone.push(match || emoji)
         }
-
         filtered = withTone
       }
 
