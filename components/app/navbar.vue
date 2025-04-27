@@ -17,7 +17,7 @@
         <!-- <AppNavigation class="mx-6" /> -->
 
         <div class="w-full lg:gap-4 gap-2 flex flex-row justify-end items-center">
-          <BuyMeACoffee class="min-w-48" />
+          <!-- <BuyMeACoffee class="min-w-48" /> -->
           <ToggleTheme />
           <Help />
         </div>
@@ -48,7 +48,7 @@
                   { label: 'About', to: { name: 'about' } },
                 ]"
               />
-              <BuyMeACoffee />
+              <!-- <BuyMeACoffee /> -->
             </div>
           </template>
 
