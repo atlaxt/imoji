@@ -3,6 +3,9 @@
 **imoji** is a modern and minimal emoji explorer built with Vue and Tailwind CSS.
 You can search, filter by skin tone or category, and copy emojis with a single click.
 
+## 🌎 Live
+- [https://imoji.co](https://imoji.co)
+
 ## ✨ Features
 
 - 🔍 Fast real-time emoji search
