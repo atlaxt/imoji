@@ -39,7 +39,7 @@ async function setGroup(group: EmojiGroupKey) {
       :name="props.group.icon"
       class="text-2xl group-hover:scale-110 transition-transform"
     />
-    <p class="text-xs font-medium text-zinc-700 dark:text-zinc-200">
+    <p class="text-xs font-medium text-zinc-700 dark:text-zinc-200 select-none">
       {{ props.group.key }}
     </p>
   </div>
