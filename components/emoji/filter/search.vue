@@ -2,19 +2,23 @@
 const search = ref<string>('')
 const emojiStore = useEmojiStore()
 
-async function handleSearch() {
+function handleSearch() {
   if (search.value.length > 0)
     emojiStore.selectedGroupKey = ''
 
   emojiStore.search = search.value
-  await emojiStore.fetchEmojis()
+  emojiStore.fetchEmojis()
 }
-defineShortcuts({
-  enter: {
-    handler: async () => await handleSearch(),
-    usingInput: true,
-  },
-})
+
+let timeout: ReturnType<typeof setTimeout> | null = null;
+
+function handleSearchLive() {
+  if (timeout !== null) {
+    clearTimeout(timeout);
+  }
+
+  timeout = setTimeout(handleSearch, 500);
+}
 </script>
 
 <template>
@@ -32,6 +36,7 @@ defineShortcuts({
       name="_search"
       placeholder="Search..."
       class="w-full"
+      @keyup="handleSearchLive"
     >
       <template #trailing>
         <UKbd v-if="!(search.length > 0)">
@@ -64,9 +69,7 @@ defineShortcuts({
       <UButton
         color="neutral"
         :icon="`${!emojiStore.isLoading ? 'i-lucide-search' : 'i-lucide-loader'}`"
-        @click="async () => {
-          await handleSearch()
-        }"
+        @click="handleSearch"
       />
     </UTooltip>
   </UButtonGroup>
