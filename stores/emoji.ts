@@ -40,12 +40,12 @@ export const useEmojiStore = defineStore('emoji', () => {
     })
 
     if (!selectedSkinColor.value)
-      return filtered.filter(e => !e.name.includes(':'))
+      return filtered.filter(e => !e.name.includes('skin tone'))
 
     const withSkinTone: Emoji[] = []
 
     for (const emoji of filtered) {
-      if (emoji.name.includes(':')) {
+      if (emoji.name.includes('skin tone')) {
         withSkinTone.push(emoji)
         continue
       }
@@ -86,7 +86,7 @@ export const useEmojiStore = defineStore('emoji', () => {
       if (tone) {
         const withTone: Emoji[] = []
         for (const emoji of filtered) {
-          if (emoji.name.includes(':'))
+          if (emoji.name.includes('skin tone'))
             continue
           const baseName = emoji.name
           const match = all.find(
