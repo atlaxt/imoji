@@ -53,7 +53,7 @@ definePageMeta({
       </h2>
       <p>
         This project was built by
-        <a href="https://github.com/atlaxt" target="_blank" class="underline hover:text-pink-500 font-medium">Atlas Yiğit Aydın</a>,
+        <a href="https://atlaxt.me" target="_blank" class="underline hover:text-pink-500 font-medium">Atlas Yiğit Aydın</a>,
         a frontend developer and indie maker.
       </p>
       <p>
