@@ -54,9 +54,27 @@ importers:
       '@antfu/eslint-config':
         specifier: ^4.12.0
         version: 4.12.0(@typescript-eslint/utils@8.30.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.13)(eslint@9.24.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.1.1(@types/debug@4.1.12)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(yaml@2.7.1))
+      '@iconify-json/bxs':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/fa-solid':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/hugeicons':
+        specifier: ^1.2.13
+        version: 1.2.13
+      '@iconify-json/lucide':
+        specifier: ^1.2.63
+        version: 1.2.63
+      '@iconify-json/material-symbols':
+        specifier: ^1.2.33
+        version: 1.2.33
       '@iconify-json/mdi':
         specifier: ^1.2.3
         version: 1.2.3
+      '@iconify-json/tabler':
+        specifier: ^1.2.22
+        version: 1.2.22
       eslint:
         specifier: ^9.24.0
         version: 9.24.0(jiti@2.4.2)
@@ -519,8 +537,26 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
+  '@iconify-json/bxs@1.2.2':
+    resolution: {integrity: sha512-uqQsDJDi9h+kjtKmx8IHZCO9tbLR3ff3GN+T5fTaNfxU4EnNX07iWF3kZfzyDZtrVgZNjR0ZIkdj3NfYf5rS4A==}
+
+  '@iconify-json/fa-solid@1.2.2':
+    resolution: {integrity: sha512-V8TDk62dGswAwbWwoSTnaoiTVEfQyjLCq4/TPmI29evFb9GwPyU0OGX4+BdQMGsDDzk8ByR81RjR618FtELSaw==}
+
+  '@iconify-json/hugeicons@1.2.13':
+    resolution: {integrity: sha512-E/avHXQBEWe7pqmhKBuxVKCSviXMNcnyilYdAYOd5Q1rf3klBD4Z3/s7gHsDlnxOKrXDANTOrH6dDmOXiRmSPg==}
+
+  '@iconify-json/lucide@1.2.63':
+    resolution: {integrity: sha512-4rRKhUhEh4TsBq5ypbimHbBA6ApIcDLR9gzjnJT2cvUn2+rG+oG4TPXgHLFmIaRkHKYcMKukdcfOUaJbM/G4pQ==}
+
+  '@iconify-json/material-symbols@1.2.33':
+    resolution: {integrity: sha512-Bs0X1+/vpJydW63olrGh60zkR8/Y70sI14AIWaP7Z6YQXukzWANH4q3I0sIPklbIn1oL6uwLvh0zQyd6Vh79LQ==}
+
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
+  '@iconify-json/tabler@1.2.22':
+    resolution: {integrity: sha512-KmCtTzZyz7dtszdQGJ5wbWqko6exhI38e4aCQqWZE1Z2wGUqBsMXrRWawXkAp6/XNBebt54h0lcxFCaTYBwFJg==}
 
   '@iconify/collections@1.0.538':
     resolution: {integrity: sha512-meO8bIZ92EQsMfJFNak0XFXf/Hitpd1+omkIPBLpLQ5UBj9Shkq8EyFqJZgl3cG1onwA7hjTEdSFmwDEKAQLiw==}
@@ -5034,7 +5070,31 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
+  '@iconify-json/bxs@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fa-solid@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/hugeicons@1.2.13':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/lucide@1.2.63':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/material-symbols@1.2.33':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/tabler@1.2.22':
     dependencies:
       '@iconify/types': 2.0.0
 

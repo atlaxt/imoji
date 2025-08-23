@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@pinia/nuxt',
     '@nuxt/ui',
-    'nuxt-gtag',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
   ],
@@ -17,9 +16,6 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
-  },
-  gtag: {
-    id: 'G-4R3XKFL775',
   },
   site: {
     url: 'https://imoji.co/',

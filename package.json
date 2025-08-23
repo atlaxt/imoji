@@ -9,8 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint",
-    "lint:fix": "eslint --fix",
-    "imoji": "git add -A . && git commit -m 'deploy' && git push -u origin master && pnpm generate && firebase deploy"
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@nuxt/fonts": "0.11.1",
@@ -30,7 +29,13 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",
+    "@iconify-json/bxs": "^1.2.2",
+    "@iconify-json/fa-solid": "^1.2.2",
+    "@iconify-json/hugeicons": "^1.2.13",
+    "@iconify-json/lucide": "^1.2.63",
+    "@iconify-json/material-symbols": "^1.2.33",
     "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/tabler": "^1.2.22",
     "eslint": "^9.24.0"
   }
 }
