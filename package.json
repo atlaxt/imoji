@@ -19,6 +19,7 @@
     "@nuxtjs/sitemap": "^7.2.10",
     "@pinia/nuxt": "^0.11.0",
     "@tailwindcss/vite": "^4.1.4",
+    "@vercel/analytics": "^1.6.1",
     "@vueuse/core": "^13.1.0",
     "nuxt": "^3.16.2",
     "nuxt-gtag": "^3.0.2",

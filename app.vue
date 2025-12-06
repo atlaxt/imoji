@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt'
+
 useHead({
   title: 'imoji – Copy & Explore Emojis Easily',
   htmlAttrs: {
@@ -44,6 +46,7 @@ useHead({
 </script>
 
 <template>
+  <Analytics />
   <UApp>
     <NuxtPage />
   </UApp>
