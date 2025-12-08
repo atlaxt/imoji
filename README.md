@@ -4,7 +4,7 @@
 You can search, filter by skin tone or category, and copy emojis with a single click.
 
 ## 🌎 Live
-- [https://imoji.co](https://imoji.co)
+- [https://atlaxt.me](https://imoji.atlaxt.me)
 
 ## ✨ Features
 
